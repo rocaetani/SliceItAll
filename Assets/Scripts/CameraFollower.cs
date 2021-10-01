@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class CameraFollower : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    public Vector3 CameraPosition;
+    public Transform Followed;
+    
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = Followed.position + CameraPosition;
     }
 }
