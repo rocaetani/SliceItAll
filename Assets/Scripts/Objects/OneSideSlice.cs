@@ -8,6 +8,7 @@ public class OneSideSlice : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     public float PushForce;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -19,6 +20,7 @@ public class OneSideSlice : MonoBehaviour
         
         if (other.collider.CompareTag("Blade"))
         {
+            _rigidbody.isKinematic = false;
             int pushSide = 1;
             if (transform.position.z < 0)
             {
